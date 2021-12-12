@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>字符串转化整数(atoi) | y-blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/y-blog/assets/css/0.styles.10f3eb02.css" as="style"><link rel="preload" href="/y-blog/assets/js/app.4db21ca5.js" as="script"><link rel="preload" href="/y-blog/assets/js/2.5921e6d7.js" as="script"><link rel="preload" href="/y-blog/assets/js/14.bd569257.js" as="script"><link rel="prefetch" href="/y-blog/assets/js/10.fa53d6ce.js"><link rel="prefetch" href="/y-blog/assets/js/11.254b08ee.js"><link rel="prefetch" href="/y-blog/assets/js/12.2f6bf0f0.js"><link rel="prefetch" href="/y-blog/assets/js/13.de57328c.js"><link rel="prefetch" href="/y-blog/assets/js/15.f371a69f.js"><link rel="prefetch" href="/y-blog/assets/js/16.6b9790ea.js"><link rel="prefetch" href="/y-blog/assets/js/17.ceb597e6.js"><link rel="prefetch" href="/y-blog/assets/js/18.cb3e1e1a.js"><link rel="prefetch" href="/y-blog/assets/js/19.37cd0a34.js"><link rel="prefetch" href="/y-blog/assets/js/3.907d2391.js"><link rel="prefetch" href="/y-blog/assets/js/4.9c0d3927.js"><link rel="prefetch" href="/y-blog/assets/js/5.8fb2962b.js"><link rel="prefetch" href="/y-blog/assets/js/6.7a505dc8.js"><link rel="prefetch" href="/y-blog/assets/js/7.1ebac3c6.js"><link rel="prefetch" href="/y-blog/assets/js/8.31a33273.js"><link rel="prefetch" href="/y-blog/assets/js/9.4571dfb3.js">
+    <link rel="stylesheet" href="/y-blog/assets/css/0.styles.10f3eb02.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/y-blog/" class="home-link router-link-active"><!----> <span class="site-name">y-blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/y-blog/guide/" class="nav-link">
+  指南
+</a></div><div class="nav-item"><a href="/y-blog/algorithms/" class="nav-link router-link-active">
+  题解
+</a></div> <a href="https://github.com/Q-S-yue/y-blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    My Github
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/y-blog/guide/" class="nav-link">
+  指南
+</a></div><div class="nav-item"><a href="/y-blog/algorithms/" class="nav-link router-link-active">
+  题解
+</a></div> <a href="https://github.com/Q-S-yue/y-blog" target="_blank" rel="noopener noreferrer" class="repo-link">
+    My Github
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/y-blog/algorithms/" aria-current="page" class="sidebar-link">介绍</a></li><li><a href="/y-blog/algorithms/1.twoSum.html" class="sidebar-link">两数之和</a></li><li><a href="/y-blog/algorithms/2.addTwoNumbers.html" class="sidebar-link">两数相加</a></li><li><a href="/y-blog/algorithms/8.stringToInteger.html" aria-current="page" class="active sidebar-link">字符串转化整数(atoi)</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/y-blog/algorithms/8.stringToInteger.html#字符串转化整数-atoi" class="sidebar-link">字符串转化整数(atoi)</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="字符串转化整数-atoi"><a href="#字符串转化整数-atoi" class="header-anchor">#</a> 字符串转化整数(atoi)</h2> <p>leecode第八题</p> <p>首先分析题意，</p> <p>myAtoi需要满足要求：</p> <p>丢弃空格</p> <p>读取符号</p> <p>读到非数字字符或结尾</p> <p>数字转为整数</p> <p>在32位有符号整数范围[−2^31, 2^31 − 1]中，否则固定为边界值</p> <p>（其实一个算法解法，最好的就是能归纳总结为一个思想）</p> <p>解法一：笨方法</p> <p>处理多种情况，比较臃肿</p> <p>这种方法，根据不同的颗粒度，有多种方法，</p> <p>暂时归纳这几种</p> <p>解法二：parseInt</p> <p>参考地址：https://leetcode-cn.com/problems/string-to-integer-atoi/solution/javascripttou-ji-qu-qiao-wu-xu-si-kao-yi-kan-jiu-h/</p> <p>解法三：正则</p> <p>总结理解题目要求是为了匹配带+或-，后面跟若干位数字的字符串，正则可以满足需求</p> <div class="language- extra-class"><pre class="language-text"><code>var myAtoi = function(s) {
+    const re = new RegExp(/^(-|\+)?\d+/);
+    let str = s.trim().match(re);
+    let res = str ? Number(str[0]) : 0;
+    return res &gt;= 0 ? Math.min(res, 2**31 - 1) : Math.max(res, -(2**31))
+};
+</code></pre></div><p>解法四：自动机</p> <p>dfa：DFA，全称 Deterministic Finite Automaton 即确定有穷自动机：从一个状态通过一系列的事件转换到另一个状态，即 state -&gt; event -&gt; state。计算机操作系统中的进程状态与切换可以作为 DFA 算法的一种近似理解</p> <p><img src="https://assets.leetcode-cn.com/solution-static/8/fig1.png" alt="fig1"></p> <p><img src="https://pic.leetcode-cn.com/0ee783ff33682169033d26832e12619ef5186cff4ec46fa7449ab548b458fb56-1585925170(1).png" alt="1585925170(1).png"></p> <p>https://leetcode-cn.com/problems/string-to-integer-atoi/solution/javascriptzi-dong-ji-guan-fang-ti-jie-de-xiang-xi-/</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/y-blog/algorithms/2.addTwoNumbers.html" class="prev">
+        两数相加
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/y-blog/assets/js/app.4db21ca5.js" defer></script><script src="/y-blog/assets/js/2.5921e6d7.js" defer></script><script src="/y-blog/assets/js/14.bd569257.js" defer></script>
+  </body>
+</html>
